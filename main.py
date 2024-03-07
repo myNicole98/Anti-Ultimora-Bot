@@ -53,16 +53,19 @@ async def antiforward(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
             text1 = update.message.caption
         
         # Check if it's a forwarded message from origin
-        if update.message.forward_origin.type == "channel":
-            forward = cast(MessageOriginChannel, update.message.forward_origin)
-            for channel in channels_list:
-                if forward.chat.username == channel:
-                    try:
-                        await context.bot.delete_message(chat_id=update.effective_chat.id, message_id=update.effective_message.id)
-                        await context.bot.send_message(chat_id= update.effective_chat.id, text=f"Spam Ultimora rilevato, messaggio cancellato.")
-                        pass
-                    except BadRequest:
-                        pass
+        try:
+            if update.message.forward_origin.type == "channel":
+                forward = cast(MessageOriginChannel, update.message.forward_origin)
+                for channel in channels_list:
+                    if forward.chat.username == channel:
+                        try:
+                            await context.bot.delete_message(chat_id=update.effective_chat.id, message_id=update.effective_message.id)
+                            await context.bot.send_message(chat_id= update.effective_chat.id, text=f"Spam Ultimora rilevato, messaggio cancellato.")
+                            pass
+                        except BadRequest:
+                            pass
+        except AttributeError:
+            pass
 
         # Check if spamming tag or link
         for channel in channels_list:
