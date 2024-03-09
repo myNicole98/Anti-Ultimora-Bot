@@ -18,17 +18,16 @@ token = config.get("Settings", "token")
 # Messages from channel updater
 def channel_timer(interval):
     global messages
-    messages = []
     channels_str = config['Settings']['channels']
     channels_list = channels_str.split(', ')
     channel_index = 0
     while True:
+        messages = []
         for element in channels_list:
             messages.insert(channel_index, channel_updater(channels_list[channel_index]))
             channel_index = channel_index + 1
         channel_index = 0
         time.sleep(interval)
-
 
 # Start channels polling
 channel_thread = threading.Thread(target = (channel_timer), args = (int(config.get("Settings", "updater")),))
