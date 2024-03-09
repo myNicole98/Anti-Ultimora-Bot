@@ -29,6 +29,10 @@ Anti Ultimora Bot è un bot Telegram progettato per eliminare i messaggi inoltra
 > pip install -r requirements.txt
 
 
+## Configurazione
+
+- Inserisci nel config.ini il token del bot creato. Istruzioni su come creare un bot con botfather: https://core.telegram.org/bots/tutorial
+
 ## Utilizzo
 
 1. Aggiungi il bot al gruppo di Telegram in cui desideri eliminare i messaggi e promuovilo ad admin
