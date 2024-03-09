@@ -2,7 +2,7 @@
 <img src="assets/logo.jpg"/></br>
 
 #
-Anti Ultimora Bot è un bot Telegram progettato per eliminare i messaggi inoltrati da canali di notizie di ultim'ora.
+Anti Ultimora Bot è un bot Telegram progettato per eliminare i messaggi inoltrati da canali di notizie di ultim'ora. Repository ufficiale di https://t.me/antiultimorabot
 
 ## Funzionalità
 
@@ -18,6 +18,12 @@ Anti Ultimora Bot è un bot Telegram progettato per eliminare i messaggi inoltra
 - pip
 
 ## Installazione
+
+- Clona la repository
+> git clone https://gitea.nikko.eu.org/nikko/Anti-Ultimora-Bot
+
+- Entra nella directory clonata
+> cd Anti-Ultimora-Bot
 
 - Installa i requisiti
 > pip install -r requirements.txt
